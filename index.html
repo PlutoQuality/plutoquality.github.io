@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ShelbyisHawt</title>
+<title>isHawt</title>
 <meta http-equiv="Content-Type" content="text/html">
 <style type="text/css">
 	body {
@@ -22,28 +22,33 @@
 		if(e.keyCode == 13) { //Enter keycode
 			alert('enter press');
 		}
-	});
+	}
+);
 </script>
 </head>
 	<body class="content">
 		<div class="header">
 			<script>
-				var name= "Shelby";
-				function go(){
+				var name= "";
+				function go(x){
+					name = x;
 					document.getElementById('title').innerHTML = "Welcome to " + name.concat("isHawt.com");
+					document.title = name.concat("isHawt");
 				}
 			</script>
-				<h1 id="title">Welcome to ShelbyisHawt.com</h1>
+				<h1 id="title">Welcome to isHawt.com</h1>
 		</div>
-			<input id="textbox" value="">
+			<input id="textbox" value="Hawt thing here">
 			<div id="log"></div>
 				<script>
 					$( "#textbox" ).on( "keydown", function( event ) {
 					$( "#log" ).html( event.type + ": " + event.which );
 					if (event.which == 13){
 						var result = document.getElementById("textbox").value;
-						window.location = result;
+						go(result);
+					//	window.location = result;
 					}
+					
 				});
 			</script>
 	</body>
